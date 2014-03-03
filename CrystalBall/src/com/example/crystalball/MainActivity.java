@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-
+	
+	private CrystalBall mCrystalBall = new CrystalBall();
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,8 +24,10 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-				// The button was clicked, so update the answer label with an answer
-				String answer = "Yes";
+				String answer = mCrystalBall.getAnAnswer();
+				
+				// Update the label with our dynamic answer
+				
 				answerLabel.setText(answer);
 			}
 		});
